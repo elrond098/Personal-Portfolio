@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* header style */
+
+header {
+    position: relative;
+}
+/* name style */
+.name {
+    position: absolute;
+    padding: 15px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+
+}
+/* list syle */
+.list {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    right: 0;
+    padding: 15px;
+}
+.list div+div:before {
+    padding: 0 8px;
+    color: black;
+    content: "/\00a0";
+}
+/* title style */
+.title {
+    padding: 80px 0 40px 0;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    
+}
+
+
+div.body {
+    width: 65%;
+    border: 2px solid black;
+    margin: auto;
+}
+
+
+
+footer {
+    height: 120px;
+    position: relative;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    border-top: 2px solid black;
+}
+
+footer div {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+
+section {
+    height: 365px;
+    border-top: 2px solid black;
+    padding: 45px;
+}
+section form {width: 100%;}
+.row {
+    width: 100%; 
+}
+.col-left {
+    float: left;
+    width: 15%;
+    padding-bottom: 35px;
+}
+.col-right {
+    float: right;
+    width: 85%;
+}
+.col-right input[type="text"] {
+    height: 40px;
+    padding: 0 15px;
+}
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+input:not(input[type=submit]) {
+    width: 100%;
+}
+textarea {
+    resize: vertical;
+    height: 170px;
+    width: calc(100% - 1px);
+    padding: 15px;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 10px;
+}
+footer {
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    header {
+        position: static;
+    }
+
+    .name {
+        position: static;
+        text-align: center;
+        font-size: large;
+    }
+    /* list syle */
+    .list {
+        width: fit-content;
+        margin: auto;
+        position: static;
+    }
+    /* title style */
+    .title {
+        padding: 30px 0 40px 0;
+    }
+
+    div.body {
+        width: 100%;
+    }
+    section {
+        height: 365px;
+        border-top: 2px solid black;
+        padding: 10px;
+    }
+    .col-left {
+        float: left;
+        width: 20%;
+        padding-bottom: 35px;
+    }
+    .col-right {
+        float: right;
+        width: 80%;
+    }
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+}

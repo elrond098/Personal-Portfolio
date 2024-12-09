@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin: 0;
+}
+
+/* body style */
+
+.body {
+    width: 65%;
+    margin: auto;
+    border: 2px solid black;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* header style */
+
+header {
+    position: relative;
+}
+/* name style */
+.name {
+    position: absolute;
+    padding: 15px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+
+}
+/* list syle */
+.list {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    right: 0;
+    padding: 15px;
+}
+.list div+div:before {
+    padding: 0 8px;
+    color: black;
+    content: "/\00a0";
+}
+/* title style */
+.title {
+    padding: 80px 0 40px 0;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    
+}
+
+section {
+    display: flex;
+    flex-wrap: nowrap; /* Elemen akan tetap sejajar dalam satu baris */
+    /* gap: 20px; Opsional: jarak antar elemen */
+    overflow-x: auto; /* Tambahkan scroll horizontal jika elemen terlalu panjang */
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+
+}
+
+.row {
+    flex: auto auto auto; /* Supaya ukuran elemen tetap sesuai kontennya */
+    width: 100%; /* Atur lebar setiap row agar rapi */
+    /* border: 1px solid black; Opsional: menambahkan batas agar elemen terlihat jelas */
+    text-align: center; /* Opsional: agar teks di dalam elemen rata tengah */
+}
+
+.row div.col {
+    padding: 10px;
+}
+
+.row div.header {
+    padding: 10px;
+}
+
+.row div.header:not(:last-child), .row div.col:not(:last-child) {
+    border-bottom: 2px solid black;;
+}
+
+.row:not(:last-child) {
+    border-right: 2px solid black;
+}
+
+/* Atur semua .col menjadi rata kiri, kecuali di dalam header Project */
+.row:not(:first-child) .col {
+    text-align: left; /* Rata kiri */
+}
+
+/* Tambahkan gaya khusus untuk header Project */
+.row:first-child .col {
+    text-align: center; /* Pastikan ini tetap rata tengah jika diperlukan */
+}
+
+/* Styling untuk grid container */
+.gird-main {
+    display: flex; /* Membuat elemen-elemen anak menyamping */
+    justify-content: center; /* Menyusun elemen anak di tengah */
+    gap: 20px; /* Memberikan jarak antar elemen */
+    /* border: 2px solid #000; Menambahkan border pada grid */
+    padding: 10px; /* Memberikan padding di dalam grid */
+    margin: 50px 0;
+}
+
+/* Styling untuk kolom kiri, tengah, dan kanan */
+.kiri, .tengah, .kanan {
+    border: 2px solid #000; /* Memberikan border pada tiap kolom */
+    padding: 10px; /* Memberikan padding di dalam tiap kolom */
+    width: 250px; /* Mengatur lebar tiap kolom */
+    height: 150px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+article p {
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+footer {
+    padding: 60px 0;
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    header {
+        position: static;
+    }
+    .body {
+        width: 100%;
+        margin: 0;
+    }
+    .name {
+        position: static;
+        text-align: center;
+        font-size: large;
+    }
+    /* list syle */
+    .list {
+        width: fit-content;
+        margin: auto;
+        position: static;
+    }
+    /* title style */
+    .title {
+        padding: 30px 0 40px 0;
+    }
+    section {
+        display: block;
+        border-bottom: none;
+    }
+    
+    .row div.col {
+        padding: 10px;
+    }
+    
+    .row div.header {
+        padding: 10px;
+    }
+    
+    .row div.header, .row div.col {
+        border-bottom: 2px solid black;;
+    }
+    
+    .row:not(:last-child) {
+        border-right: 2px solid black;
+    }
+    
+    /* Atur semua .col menjadi rata kiri, kecuali di dalam header Project */
+    .row:not(:first-child) .col {
+        text-align: left; /* Rata kiri */
+    }
+    
+    /* Tambahkan gaya khusus untuk header Project */
+    .row:first-child .col {
+        text-align: center; /* Pastikan ini tetap rata tengah jika diperlukan */
+    }
+
+    /* Styling untuk grid container */
+    .gird-main {
+        display: block; /* Membuat elemen-elemen anak menyamping */
+    }
+    
+    /* Styling untuk kolom kiri, tengah, dan kanan */
+    .kiri, .tengah, .kanan {
+        width: 100%; /* Mengatur lebar tiap kolom */
+        margin: 10px 0;
+    }
+
+    article p {
+        margin-left: 40px;
+        margin-top: 30px;
+    }
+
+    footer {
+        padding: 60px 0;
+        text-align: center;
+    }
+    .grid-main {
+        overflow-x: auto;
+    }
+
+    .col {
+        background-color: #D7D3BF;
+    }
+
+}
